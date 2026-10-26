@@ -1,0 +1,319 @@
+
+/* ===== Global Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f6f5ef;
+  color: #25382f;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #244b3e;
+  color: #fffdf6;
+  padding: 28px 6%;
+  border-bottom: 4px solid #d6dfc9;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 3vw, 36px);
+  letter-spacing: -0.8px;
+}
+
+.header p {
+  margin: 0;
+  color: #dce8df;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== Main Layout ===== */
+.main {
+  width: min(1160px, 92%);
+  margin: 36px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* ===== Main Cards ===== */
+.agent-card,
+.orders,
+.transcript {
+  min-width: 0;
+  background: #fffefa;
+  padding: 28px;
+  border: 1px solid #e7e8dd;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(36, 75, 62, 0.055);
+}
+
+.agent-card {
+  text-align: center;
+}
+
+/* ===== Aria Avatar ===== */
+.avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 18px;
+  border-radius: 24px;
+  background: #e2eadc;
+  color: #244b3e;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(36, 75, 62, 0.08);
+}
+
+/* ===== Status ===== */
+.status {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #edf2e8;
+  color: #315b4c;
+  border: 1px solid #dbe5d4;
+  border-radius: 30px;
+  padding: 9px 17px;
+  margin: 18px 0 22px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===== Call Buttons ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 12px 21px;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid #a7c69b;
+  outline-offset: 3px;
+}
+
+.start-btn {
+  background: #315b4c;
+  color: white;
+  box-shadow: 0 4px 10px rgba(49, 91, 76, 0.15);
+}
+
+.start-btn:hover:not(:disabled) {
+  background: #244b3e;
+  box-shadow: 0 6px 15px rgba(49, 91, 76, 0.2);
+}
+
+.start-btn:disabled {
+  background: #b8c5bf;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.end-btn {
+  background: #f0eeea;
+  color: #77756f;
+}
+
+.end-btn:not(:disabled) {
+  background: #a94138;
+  color: white;
+  cursor: pointer;
+}
+
+.end-btn:not(:disabled):hover {
+  background: #89352e;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+/* ===== Helper Text ===== */
+.note {
+  color: #85877d;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+/* ===== Orders ===== */
+.orders h2,
+.transcript h2 {
+  margin: 0 0 20px;
+  color: #244b3e;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.order-card {
+  background: #f7f7f0;
+  padding: 18px;
+  margin-top: 14px;
+  border: 1px solid #e8e9df;
+  border-radius: 14px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.order-card:hover {
+  border-color: #b7c9ae;
+  transform: translateY(-2px);
+}
+
+.order-card h3 {
+  color: #315b4c;
+  margin: 0 0 12px;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.order-card p {
+  color: #666d64;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 6px 0;
+}
+
+/* ===== Transcript ===== */
+.transcript {
+  grid-column: 1 / -1;
+}
+
+.transcript p {
+  color: #626b62;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* ===== JSON Summary ===== */
+.transcript pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #f2f4ec;
+  color: #315b4c;
+  border: 1px solid #e1e7da;
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ===== Inputs ===== */
+input,
+textarea,
+select {
+  max-width: 100%;
+  border: 1px solid #dce2d7;
+  border-radius: 10px;
+  padding: 11px 13px;
+  background: #fffefa;
+  color: #25382f;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #a7c69b;
+  outline-offset: 1px;
+}
+
+/* ===== Error Messages ===== */
+.error {
+  color: #a94138;
+  background: #fff0ed;
+  border: 1px solid #f0d1cb;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 760px) {
+  .main {
+    grid-template-columns: 1fr;
+    width: min(560px, 92%);
+    margin: 24px auto;
+    gap: 18px;
+  }
+
+  .transcript {
+    grid-column: auto;
+  }
+
+  .header {
+    padding: 24px 5%;
+  }
+
+  .agent-card,
+  .orders,
+  .transcript {
+    padding: 22px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+
+  .agent-card,
+  .orders,
+  .transcript {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
