@@ -57,13 +57,16 @@ const sendMessageToAria = async (message) => {
   setStatus('Thinking')
 
 try {
-  const response = await fetch('http://localhost:3000/api/assistant/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: message }),
-    })
+ const response = await fetch(
+  'https://aura-voice-agent-rm4s.onrender.com/api/assistant/chat',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message: message }),
+  }
+)
 
     const data = await response.json()
 
@@ -108,7 +111,7 @@ setIsListening(false)
   setStatus('Thinking')
 
   try {
-    const response = await fetch('http://localhost:3000/api/assistant/summary', {
+    const response = await fetch('https://aura-voice-agent-rm4s.onrender.com/api/assistant/summary', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -149,7 +152,7 @@ setIsListening(false)
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/orders/${encodeURIComponent(cleanOrderId)}/cancel-check`,
+        `https://aura-voice-agent-rm4s.onrender.com/api/orders/${encodeURIComponent(cleanOrderId)}/cancel-check`,
         { method: 'POST' }
       )
 
