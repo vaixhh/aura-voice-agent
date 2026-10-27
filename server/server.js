@@ -271,7 +271,7 @@ TOOL RULES:
 
     // Send tool results back to Gemini for a natural-language answer.
     const finalResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash-lite',
       contents: [
         { role: 'user', parts: [{ text: message }] },
         modelContent,
@@ -314,7 +314,7 @@ app.post('/api/assistant/summary', async (req, res) => {
       .join('\n')
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash-lite',
       contents: `Create a short call summary from this conversation:\n\n${conversationText}`,
       config: {
         systemInstruction: `
