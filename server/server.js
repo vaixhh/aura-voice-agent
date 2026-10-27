@@ -289,7 +289,7 @@ TOOL RULES:
         'Sorry, I could not prepare a response. Please try again.'
     })
   } catch (error) {
-    console.error('Gemini assistant error:', error.message)
+    console.error('Gemini assistant error:', error)
 
     return res.status(500).json({
       error:
@@ -338,7 +338,7 @@ Do not invent order details or claim an issue was resolved unless the conversati
 
     return res.json({ summary })
   } catch (error) {
-    console.error('Call summary error:', error.message)
+    console.error('Call summary error:', error)
 
     return res.status(500).json({
       error: 'Could not generate the call summary.'
