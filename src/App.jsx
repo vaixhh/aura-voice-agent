@@ -229,7 +229,7 @@ function startListening() {
       ])
 
       sendMessageToAria(spokenText)
-    }, 2500)
+    }, 1200)
   }
 
   recognition.onerror = () => {
